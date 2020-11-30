@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form name="myForm" enctype="multipart/form-data" action="/" method="POST">
+        First name: <input type="text" name="description">
+        Select Image: <input type="file" name="image">
+        <button type="submit" id="button">Submit</button>
+     </form>
+
+     <% if(files){ %>
+        <% files.forEach(function(file){ %>
+            <div class="card card-body mb-3">
+                <img src="/image/<%=file.filename%> ">
+            </div>
+        <% }); %>  
+    <% } else { %>
+        <p>No files to show</p>
+    <% } %> 
+
+</body>
+</html>
